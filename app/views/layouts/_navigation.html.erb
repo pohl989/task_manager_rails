@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+  <div class="ui secondary pointing menu">
+    <%= link_to 'Home', root_path, class: "ui item #{'active' if current_page?('/')}" %>
+    <%= link_to 'Projects', projects_path, class: "ui item #{'active' if current_page?('/projects')}" %>
+    <%= link_to 'Tasks', tasks_path, class: "ui item #{'active' if current_page?('/tasks')}" %>
+    <a class="item">
+      Teams
+    </a>
+    <div class="right menu">
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "ui item" %>
+    </div>
+  </div>
+  <div class="ui segment">
+    <p></p>
+  </div>
+<% end %>
